@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://textile2markdown.rubyforge.org}
   s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Textile2Markdown", "--main", "README.txt"]
   s.require_paths = ["lib"]
-  s.rubyforge_project = %q{textile2markdown}
+  s.rubyforge_project = %q{textile2markdwn}
   s.rubygems_version = %q{1.2.0}
   s.summary = %q{Converts Textile files to Markdown.}
   s.executables = ['textile2markdown']
