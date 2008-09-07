@@ -1,7 +1,6 @@
-links
-xxx [foo](bar) yyy
-xxx [foo](bar)
-xxx [foo](bar), yyy
+xxx [foo](#bar) yyy
+xxx [foo](#bar)
+xxx [foo](#bar), yyy
 
 * list item
   * sub list item
@@ -12,3 +11,7 @@ xxx [foo](bar), yyy
    1. sub list item
       1. sub sub list item
          1. sub sub sub list item
+
+# heading one
+## heading two
+### heading three

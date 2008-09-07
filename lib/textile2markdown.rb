@@ -4,16 +4,17 @@ class Textile2Markdown
     textile_lines = IO.readlines(textile_filename)
     File.open(markdown_filename, 'w') do |markdown_file|
       textile_lines.each do |textile_line|
-        markdown_file.write(convert(textile_line))
+        markdown_file.write(convert_line(textile_line))
       end
     end
     0
   end
   
-  def convert(input)
+  def convert_line(input)
     tmp = convert_links(input)
     tmp = convert_ul(tmp)
     tmp = convert_ol(tmp)
+    tmp = convert_headings(tmp)
     tmp
   end
   
@@ -29,5 +30,9 @@ class Textile2Markdown
 
   def convert_ol(input)
     input.gsub(/^####/, '         1.').gsub(/^###/, '      1.').gsub(/^##/, '   1.').gsub(/^#/, '1.')
+  end
+
+  def convert_headings(input)
+    input.gsub(/^h(\d)\./) {|match| '#' * $1.to_i }
   end
 end
