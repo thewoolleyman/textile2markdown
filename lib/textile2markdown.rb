@@ -23,7 +23,7 @@ class Textile2Markdown
   protected
 
   def convert_links(input)
-    input.gsub(/"(.*)":(.+?)(?=,| |$)/, '[\1](\2)') 
+    input.gsub(/"(.*?)":(.+?)(?=,| |$)/, '[\1](\2)') 
   end
 
   def convert_ul(input)

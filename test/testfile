@@ -1,4 +1,5 @@
 xxx "foo":#bar yyy
+xxx "foo":#bar "foo":#bar yyy
 xxx "foo":#bar
 xxx "foo":#bar, yyy
 
