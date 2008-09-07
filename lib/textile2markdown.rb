@@ -15,6 +15,7 @@ class Textile2Markdown
     tmp = convert_ul(tmp)
     tmp = convert_ol(tmp)
     tmp = convert_headings(tmp)
+    tmp = escape_unescaped_underscores(tmp)
     tmp
   end
   
@@ -34,5 +35,11 @@ class Textile2Markdown
 
   def convert_headings(input)
     input.gsub(/^h(\d)\./) {|match| '#' * $1.to_i }
+  end
+
+  def escape_unescaped_underscores(input)
+    # two passes required to handle double-underscores, not sure why 
+    regexp = /([^\\])_/
+    input.gsub(regexp, '\1\_').gsub(regexp, '\1\_')
   end
 end
