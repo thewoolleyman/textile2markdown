@@ -13,7 +13,23 @@ xxx "foo":#bar, yyy
 #### sub sub sub list item
 
 h1. heading one
+
 h2. heading two
+
 h3. heading three
 
 aaa_bbb ccc__ddd eee\_fff
+
+_e_mphasis_
+*s_trong*
+*_b_oth_*
+__i_talic__
+**b_old**
+**__b_oth__**
+
+xxx _e_mphasis_ xxx
+xxx *s_trong* xxx
+xxx *_b_oth_* xxx
+xxx __i_talic__ xxx
+xxx **b_old** xxx
+xxx **__b_oth__** xxx

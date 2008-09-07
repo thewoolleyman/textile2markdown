@@ -13,7 +13,23 @@ xxx [foo](#bar), yyy
          1. sub sub sub list item
 
 # heading one
+
 ## heading two
+
 ### heading three
 
 aaa\_bbb ccc\_\_ddd eee\_fff
+
+*e\_mphasis*
+**s\_trong**
+***b\_oth***
+*i\_talic*
+**b\_old**
+***b\_oth***
+
+xxx *e\_mphasis* xxx
+xxx **s\_trong** xxx
+xxx ***b\_oth*** xxx
+xxx *i\_talic* xxx
+xxx **b\_old** xxx
+xxx ***b\_oth*** xxx

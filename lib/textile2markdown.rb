@@ -15,6 +15,7 @@ class Textile2Markdown
     tmp = convert_ul(tmp)
     tmp = convert_ol(tmp)
     tmp = convert_headings(tmp)
+    tmp = escape_emphasis(tmp)
     tmp = escape_unescaped_underscores(tmp)
     tmp
   end
@@ -26,7 +27,7 @@ class Textile2Markdown
   end
 
   def convert_ul(input)
-    input.gsub(/^\*\*\*\*/, '      *').gsub(/^\*\*\*/, '    *').gsub(/^\*\*/, '  *')
+    input.gsub(/^\*\*\*\* /, '      * ').gsub(/^\*\*\* /, '    * ').gsub(/^\*\* /, '  * ')
   end
 
   def convert_ol(input)
@@ -42,4 +43,13 @@ class Textile2Markdown
     regexp = /([^\\])_/
     input.gsub(regexp, '\1\_').gsub(regexp, '\1\_')
   end
+
+  def escape_emphasis(input)
+    tmp = input
+    tmp.gsub!(/(^| )(\*)([^_* ].+?[^_*])(\*)($| )/, '\1**\3**\5')
+    tmp.gsub!(/(^| )(__|_)([^_* ].+?[^_*])(__|_)($| )/, '\1*\3*\5')
+    tmp.gsub!(/(^| )(\*_|\*\*__)([^_* ].+?[^_*])(_\*|__\*\*)($| )/, '\1***\3***\5')
+    tmp
+  end
+
 end
