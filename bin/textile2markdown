@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require "#{File.dirname(__FILE__)}/../lib/textile2markdown.rb"
+converter = Textile2Markdown.new
+textile_file = ARGV.first
+unless ARGV.size >= 1 && ARGV.size <= 2
+  puts "Usage: textile2markdown <textile input filename> [<markdown output filename>]" 
+  exit 1
+end
+exit converter.convert_file(ARGV[0], ARGV[1])

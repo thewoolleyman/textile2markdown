@@ -1,0 +1,7 @@
+Manifest
+README.txt
+bin/textile2markdown
+lib/textile2markdown.rb
+test/expected.markdown
+test/testfile
+test/textile2markdown_test.rb
